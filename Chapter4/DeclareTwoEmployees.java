@@ -4,9 +4,9 @@ public class DeclareTwoEmployees {
       Employee driver = new Employee();
       
       clerk.setEmpNum(345);
-      System.out.println(clerk.getEmpNum());
+      System.out.println("The clerk's number is " +clerk.getEmpNum());
       driver.setEmpNum(567);
-      System.out.println(driver.getEmpNum());
+      System.out.println("The driver's number is " +driver.getEmpNum());
       
    }
 }
