@@ -1,37 +1,34 @@
 import java.util.Scanner;
 
-public class CreateSpaServices {
+public class CreateSpaService {
    public static void main(String[] args) {
-      String service;
-      double price;
-      
+      Scanner input = new Scanner(System.in);
+   
       SpaService firstService = new SpaService();
       SpaService secondService = new SpaService();
+   
+      firstService = getData(firstService);
+      System.out.println("Service: " +firstService.getServiceDescription());
+      System.out.println("Price: " +firstService.getPrice());
+
+      secondService = getData(secondService);
+      System.out.println("Service: " +secondService.getServiceDescription());
+      System.out.println("Price: " +secondService.getPrice());       
+   
+  }
+  
+   public static SpaService getData(SpaService service) {
       Scanner input = new Scanner(System.in);
       
-     
       System.out.print("Enter service: ");
-      service = input.nextLine();
+      String serviceDescription = input.nextLine();
       System.out.print("Enter price: ");
-      price = input.nextDouble();
-      
-      firstService.setServiceDescription(service);
-      firstService.setPrice(price);
-      System.out.println("First Service details:");
-      System.out.println(firstService.getServiceDescription());
-      System.out.println("$" +firstService.getPrice());
-      
+      double price = input.nextDouble();
       input.nextLine();
-      System.out.print("\nEnter service: ");
-      service = input.nextLine();
-      System.out.print("Enter price: ");
-      price = input.nextDouble();
-
-      secondService.setServiceDescription(service);
-      secondService.setPrice(price);
-      System.out.println("Second Service details:");
-      System.out.println(secondService.getServiceDescription());
-      System.out.println("$" +secondService.getPrice());
-        
-   }
+      
+      service.setServiceDescription(serviceDescription);
+      service.setPrice(price);
+      return service;
+  
+  }
 }
